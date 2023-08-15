@@ -1,0 +1,20 @@
+<style>form.spinner{border:1px solid black;border-radius:8px;box-shadow:2px 2px rgba(70,70,70,.2);padding:.5em .75em;background-color:rgba(92,64,51,.2);overflow:auto}form.spinner label{font-size:1.5em;font-weight:bold;font-family:sans;color:white;text-shadow:1px 1px 0 black,0px 0 2px darkgrey}form.spinner button{cursor:pointer;transition:background .2s;height:2.5em;font-size:1em;font-weight:bold;background-color:lightgreen;overflow:auto}form.spinner button:hover{background-color:lightgreen}form.spinner>*{width:100%;display:block;box-sizing:border-box}form.spinner>*:not(:last-child){margin-bottom:8px}form.spinner textarea{resize:vertical;height:180px;border:1px solid;border-radius:4px;color:black}form.spinner textarea#spintax_input{color:}form.spinner textarea#spintax_output{background-color:rgba(255,103,255,.2);font-family:sans}</style><form class="spinner"><label>Input</label><textarea id="spintax_input" >{Allow me to share some insights about us!|I will tell you a little about us!|Let me give you a glimpse into our story!|I'd love to provide you with a brief overview of who we are!} {{We're|We are} a small team, based in The {United States|US}, that launched back in 2018.|Our origins trace back to 2018, when we embarked on this journey as a compact team situated in The {United States|US}.|In 2018, we began our venture as a close-knit group based in The {United States|US}.|Our roots go back to 2018, when we kicked off as a small yet dedicated team situated in The {United States|US}.} {Our mission has been to raise awareness for mental health across the world.|Since then, our unwavering objective has revolved around spreading awareness about mental health globally.|Our overarching mission has been to foster global recognition of mental health importance.|From then onwards, our primary goal has centered on promoting worldwide awareness about mental health.} {And to help support the cause, a portion of every sale is donated to organizations like the National Alliance on Mental Illness!|As a part of our commitment to the cause, we contribute a percentage of each purchase to vital organizations such as the National Alliance on Mental Illness!|As a way of lending support, we allocate a share of every transaction to organizations like the National Alliance on Mental Illness!|And to actively contribute to this cause, a portion of each sale is directed towards organizations like the National Alliance on Mental Illness!}</textarea><label>Output</label><textarea id="spintax_output" placeholder="What is the deal with the food they give you on airplanes?" enabled=""></textarea><button type="button" onclick="spin_form();">Run Spintax</button></form><script>function run_spintax(spintax){var regex=new RegExp(/{([^{}]+?)}/);while((to_spin=regex.exec(spintax))!==null){opts=to_spin[1].split("|");random=Math.floor(Math.random()*opts.length);spintax=spintax.replace(to_spin[0],opts[random])}return spintax}function spin_form(){var t=document.getElementById("spintax_input").value;var t=run_spintax(t);document.getElementById("spintax_output").value=t}</script>
+
+
+<center>
+<button onclick="myFunction()">&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Copy text&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</button>
+
+<script>
+function myFunction() {
+  // Get the text field
+  var copyText = document.getElementById("spintax_output");
+
+  // Copy the text inside the text field
+  navigator.clipboard.writeText(copyText.value);
+  
+}
+</script>
+</center>
+
+
+
